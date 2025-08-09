@@ -1,0 +1,145 @@
+Prompt:
+
+Goal: Build a production-ready Ethical AI Prompt Library web app in Python, hosted on Replit, that contains a curated set of prompts for testing LLM safety and robustness.
+Users should be able to:
+
+Browse prompts by category.
+
+Run them against selected LLMs via API calls.
+
+View and log the model responses for analysis.
+
+Requirements:
+
+1. Prompt Categories
+Store prompts in structured JSON/CSV format with:
+
+Category: Safety stress-testing, bias detection, truthfulness, reasoning, prompt injection robustness.
+
+Prompt text.
+
+Expected safe behavior (optional).
+
+Example categories:
+
+Safety/Jailbreaks — attempts to elicit disallowed responses.
+
+Bias Tests — demographic swaps to measure differences.
+
+Truthfulness Checks — fact-based Q&A.
+
+Reasoning Tests — multi-step logic problems.
+
+Prompt Injection Tests — attempts to override instructions.
+
+2. Model Integration
+Support:
+
+OpenAI GPT models (API key via .env)
+
+Anthropic Claude models (API key via .env)
+
+Cohere models (API key via .env)
+
+HuggingFace Inference API models (API key via .env)
+
+Abstract all calls in models.py so switching providers is easy.
+
+3. Execution Pipeline
+Allow the user to:
+
+Select one or more categories of prompts.
+
+Select a model/provider.
+
+Execute all prompts sequentially.
+
+Record:
+
+Prompt text
+
+Model output
+
+Pass/Fail status if applicable
+
+Timestamp
+
+4. Database
+Use SQLite for:
+
+Prompt metadata
+
+Model run results
+
+Historical execution logs
+
+5. Web Interface (Streamlit or Gradio)
+Prompt Library Tab: Searchable/filterable table of prompts with categories.
+
+Run Tests Tab: Form to select categories + model → run prompts → view real-time output table.
+
+Results Tab: Sortable table of past runs with filters for model, date, and category.
+
+Analysis Tab: Charts (via Plotly) showing model performance across categories over time.
+
+6. Public API
+/prompts endpoint: GET all prompts in JSON.
+
+/run endpoint: POST request to execute selected prompts against a given model.
+
+/results endpoint: GET historical results.
+
+7. Production Setup
+Modular file structure:
+
+app.py → main Streamlit/Gradio app
+
+models.py → API wrappers for LLM providers
+
+prompts.py → functions for loading/storing prompt library
+
+runner.py → execution logic for prompts
+
+database.py → SQLite helper functions
+
+api.py → FastAPI endpoints
+
+utils.py → shared helper functions
+
+requirements.txt → (streamlit or gradio, fastapi, requests, sqlite3, python-dotenv, plotly)
+
+.replit config for running both the UI and API.
+
+Nix config for reproducibility.
+
+README.md with setup guide, screenshots, and description of categories.
+
+8. Stretch Goals
+Allow upload of custom prompt sets in JSON/CSV.
+
+Export model results as CSV/JSON.
+
+Tag prompts with difficulty level.
+
+Add per-prompt scoring automation.
+
+Instructions:
+Generate modular, fully commented code with docstrings for every function.
+All API keys stored in .env.
+Ensure the app runs fully inside Replit with a responsive web UI and working public API endpoints.
+Include a small starter prompt set for each category.
+
+If you want, I can now write the complete codebase for this Ethical AI Prompt Library so you can drop it into Replit and launch the app immediately — API-ready, with UI and starter dataset.
+
+Do you want me to prepare that next?
+
+
+
+
+
+
+
+
+
+Ask ChatGPT
+
