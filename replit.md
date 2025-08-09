@@ -1,8 +1,8 @@
 # Overview
 
-The Ethical AI Prompt Library is a production-ready web application designed to test LLM safety and robustness across multiple categories. The application provides researchers and developers with a comprehensive platform to evaluate AI model behavior using curated prompts for safety stress-testing, bias detection, truthfulness checks, reasoning evaluation, and prompt injection robustness testing.
+The Ethical AI Prompt Library is an enterprise-grade AI safety research platform designed to attract top-tier talent from companies like Meta, Anthropic, and Google. This production-ready application demonstrates advanced ML engineering capabilities through comprehensive LLM safety testing, bias detection, adversarial prompt generation, and sophisticated anomaly detection systems.
 
-The system combines a user-friendly Streamlit web interface with a RESTful FastAPI backend, enabling both interactive testing and programmatic access. It supports multiple LLM providers (OpenAI, Anthropic, Cohere, HuggingFace) and includes features for historical analysis, data export, and real-time execution tracking.
+The platform combines cutting-edge research capabilities with production-grade monitoring, featuring automated safety classification using ML models, real-time performance optimization, enterprise dashboards for executive reporting, and advanced analytics suitable for research publications. It showcases expertise in both AI safety research and large-scale system architecture.
 
 # User Preferences
 
@@ -11,18 +11,19 @@ Preferred communication style: Simple, everyday language.
 # System Architecture
 
 ## Frontend Architecture
-- **Streamlit-based UI**: Multi-tab interface with tabs for Prompt Library, Run Tests, Results, and Analysis
-- **Interactive Components**: Real-time progress tracking, interactive charts using Plotly, and data export functionality
-- **Responsive Design**: Wide layout configuration optimized for data visualization and analysis
+- **Advanced Multi-Tab Interface**: Six specialized dashboards including Enterprise Executive Overview and Research Analytics
+- **Real-time Monitoring**: Production-grade alerting system with performance metrics and anomaly detection
+- **Interactive Visualizations**: Sophisticated Plotly charts for model comparison matrices, performance trends, and research insights
+- **Enterprise Dashboards**: Executive-level KPIs, technical metrics for engineers, and research analytics for AI scientists
 
 ## Backend Architecture
-- **FastAPI REST API**: Provides programmatic access with comprehensive endpoints for prompts and execution
-- **Modular Design**: Separated concerns across dedicated modules:
-  - `database.py`: SQLite database operations
-  - `prompts.py`: Prompt management and library operations
-  - `models.py`: LLM provider integrations with abstracted interfaces
-  - `runner.py`: Prompt execution engine with error handling
-  - `utils.py`: Shared utility functions
+- **Production API Layer**: FastAPI with comprehensive endpoints, auto-scaling recommendations, and performance optimization
+- **Advanced ML Pipeline**: 
+  - `ml_features.py`: Production ML safety classifier with feature engineering and anomaly detection
+  - `advanced_analysis.py`: Sophisticated toxicity analysis, bias detection, and adversarial prompt generation
+  - `enterprise_dashboard.py`: Executive and technical monitoring dashboards with real-time alerting
+- **Core Infrastructure**: Database operations, model abstractions, execution engine, and utility functions
+- **Research Capabilities**: Statistical analysis, benchmark generation, and publication-ready reporting
 
 ## Data Storage Solutions
 - **SQLite Database**: Local file-based storage with two main tables:
@@ -68,6 +69,8 @@ Preferred communication style: Simple, everyday language.
 - **python-dotenv**: Environment variable management
 - **asyncio**: Asynchronous programming support
 - **requests**: HTTP client for external API calls
+- **scikit-learn**: Production ML models for safety classification and anomaly detection
+- **scipy**: Statistical analysis and significance testing for research-grade metrics
 
 ## Development and Deployment
 - **Replit Platform**: Cloud-based development and hosting environment

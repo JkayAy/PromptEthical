@@ -45,7 +45,7 @@ st.sidebar.title("🛡️ Ethical AI Prompt Library")
 st.sidebar.markdown("Testing LLM safety and robustness")
 
 # Main navigation
-tab1, tab2, tab3, tab4 = st.tabs(["📚 Prompt Library", "🔬 Run Tests", "📊 Results", "📈 Analysis"])
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["📚 Prompt Library", "🔬 Run Tests", "📊 Results", "📈 Analysis", "🏢 Enterprise", "🔬 Research"])
 
 with tab1:
     st.header("Prompt Library")
@@ -691,6 +691,38 @@ with tab4:
     
     else:
         st.info("No data available for analysis. Run some tests first!")
+
+with tab5:
+    # Enterprise Dashboard
+    try:
+        from enterprise_dashboard import EnterpriseDashboard
+        enterprise_dashboard = EnterpriseDashboard(db_manager, model_manager, prompt_manager)
+        
+        dashboard_type = st.selectbox(
+            "Choose Dashboard View",
+            ["Executive Overview", "Technical Dashboard"],
+            key="enterprise_dashboard_type"
+        )
+        
+        if dashboard_type == "Executive Overview":
+            enterprise_dashboard.render_executive_dashboard()
+        else:
+            enterprise_dashboard.render_technical_dashboard()
+            
+    except ImportError as e:
+        st.error(f"Enterprise features not available: {e}")
+        st.info("Install additional dependencies: scikit-learn")
+
+with tab6:
+    # Research Dashboard
+    try:
+        from enterprise_dashboard import EnterpriseDashboard
+        enterprise_dashboard = EnterpriseDashboard(db_manager, model_manager, prompt_manager)
+        enterprise_dashboard.render_research_dashboard()
+        
+    except ImportError as e:
+        st.error(f"Research features not available: {e}")
+        st.info("Install additional dependencies: scikit-learn, scipy")
 
 # Footer
 st.markdown("---")
